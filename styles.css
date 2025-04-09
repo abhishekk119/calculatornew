@@ -1,37 +1,24 @@
-/* Add these at the top of your styles.css */
-html {
-    font-size: 16px;
-    box-sizing: border-box;
-}
-
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f5f5f5;
-}
-
-/* Modify your existing container styles */
+/* Base styles for all devices */
 #container {
     text-align: center;
+    margin: 20px auto;
     border: solid 1px black;
     border-radius: 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    width: 90%;
-    max-width: 300px;
-    min-width: 250px;
-    margin: 20px auto;
     padding: 10px;
+    width: 100%;
+    max-width: 300px;
 }
 
-/* Update button sizes for mobile */
+/* Display area adjustments */
+#display-area, #result-area {
+    min-height: 50px;
+    padding: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Button base styles */
 #btn, #colored {
     height: 50px;
     width: 50px;
@@ -39,30 +26,37 @@ body {
     border-radius: 25px;
     margin: 5px;
     font-size: 20px;
-    transition: all 0.2s ease;
+    display: inline-block;
 }
 
-/* Make buttons bigger on smaller screens */
-@media (max-width: 400px) {
-    #btn, #colored {
-        height: 60px;
-        width: 60px;
-        margin: 5px;
+/* Mobile-specific styles */
+@media only screen and (max-width: 600px) {
+    body {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    
+    #container {
+        width: 95%;
+        margin: 0 auto;
     }
     
     #buttons-and-operaters-div {
-        padding: 15px;
-    }
-}
-
-/* Adjust font sizes for mobile */
-@media (max-width: 500px) {
-    #display-area-h2 {
-        font-size: 1.2rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        padding: 10px;
     }
     
-    #result-area-h1 {
-        font-size: 1.5rem;
+    #btn, #colored {
+        height: 60px;
+        width: 100%;
+        max-width: 60px;
+        margin: 0;
+        font-size: 18px;
     }
 }
 
@@ -75,10 +69,4 @@ body {
 #colored:hover {
     background-color: blue;
     transform: scale(1.02);
-}
-
-/* Add this for better touch targets on mobile */
-button {
-    -webkit-tap-highlight-color: transparent;
-    cursor: pointer;
 }
