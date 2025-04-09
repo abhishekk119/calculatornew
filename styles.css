@@ -1,65 +1,84 @@
+/* Add these at the top of your styles.css */
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+
+/* Modify your existing container styles */
 #container {
     text-align: center;
-    margin: 0 auto 0 auto;
-    width: fit-content;
     border: solid 1px black;
-    height: 500px;
-    width: 300px;
     border-radius: 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 90%;
+    max-width: 300px;
+    min-width: 250px;
+    margin: 20px auto;
+    padding: 10px;
 }
 
-#display-area{
-    height: 50px;
-    
-}
-
-#display-area-h2{
-    color: gray;
-    font-family: "Times New Roman", Times, serif;
-}
-
-#result-area{
-    height: 50px;
-    
-}
-
-#btn {
+/* Update button sizes for mobile */
+#btn, #colored {
     height: 50px;
     width: 50px;
     border: solid 1px;
     border-radius: 25px;
-    margin-right: 7px;
-    margin-top: 8px;
-    background-color: #545AA7;
-    color: white;
+    margin: 5px;
     font-size: 20px;
-    
+    transition: all 0.2s ease;
 }
 
+/* Make buttons bigger on smaller screens */
+@media (max-width: 400px) {
+    #btn, #colored {
+        height: 60px;
+        width: 60px;
+        margin: 5px;
+    }
+    
+    #buttons-and-operaters-div {
+        padding: 15px;
+    }
+}
+
+/* Adjust font sizes for mobile */
+@media (max-width: 500px) {
+    #display-area-h2 {
+        font-size: 1.2rem;
+    }
+    
+    #result-area-h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Keep your existing hover effects */
 #btn:hover {
     background-color: orange;
     transform: scale(1.02);
 }
 
-#buttons-and-operaters-div{
-    padding: 30px;
-    
-}
-
-#colored {
-    height: 50px;
-    width: 50px;
-    border: solid 1px;
-    border-radius: 25px;
-    margin-right: 7px;
-    margin-top: 8px;
-    background-color: greenyellow;
-    color: white;
-    font-size: 20px;
-}
-
 #colored:hover {
     background-color: blue;
     transform: scale(1.02);
+}
+
+/* Add this for better touch targets on mobile */
+button {
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
 }
