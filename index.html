@@ -1,48 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Calculator</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
     <div id="container">
-      <div id="display-area">
-        <h2 id="display-area-h2"></h2>
-      </div>
-      <hr />
-      <div id="result-area">
-        <h1 id="result-area-h1"></h1>
-      </div>
-      <br />
-      <div id="buttons-and-operaters-div">
-        <button id="colored" onclick="calculator('c')">C</button>
-        <button id="colored" onclick="calculator('()')">()</button>
-        <button id="colored" onclick="calculator('DEL')">DEL</button>
-        <button id="colored" onclick="calculator('/')">/</button>
-        <br />
-        <button id="btn" onclick="calculator('7')">7</button>
-        <button id="btn" onclick="calculator('8')">8</button>
-        <button id="btn" onclick="calculator('9')">9</button>
-        <button id="colored" onclick="calculator('*')">X</button>
-        <br />
-        <button id="btn" onclick="calculator('4')">4</button>
-        <button id="btn" onclick="calculator('5')">5</button>
-        <button id="btn" onclick="calculator('6')">6</button>
-        <button id="colored" onclick="calculator('-')">-</button>
-        <br />
-        <button id="btn" onclick="calculator('1')">1</button>
-        <button id="btn" onclick="calculator('2')">2</button>
-        <button id="btn" onclick="calculator('3')">3</button>
-        <button id="colored" onclick="calculator('+')">+</button>
-        <br />
-        <button id="colored" onclick="calculator('+/-')">+/-</button>
-        <button id="btn" onclick="calculator('0')">0</button>
-        <button id="colored" onclick="calculator('.')">.</button>
-        <button id="colored" onclick="calculator('=')">=</button>
-      </div>
+        <div id="display-area">
+            <h2 id="display-area-h2"></h2>
+        </div>
+        <hr>
+        <div id="result-area">
+            <h1 id="result-area-h1"></h1>
+        </div>
+        <div id="buttons-and-operaters-div">
+            <div class="button-row">
+                <button id="colored" onclick="calculator('c')">C</button>
+                <button id="colored" onclick="calculator('()')">()</button>
+                <button id="colored" onclick="calculator('DEL')">DEL</button>
+                <button id="colored" onclick="calculator('/')">/</button>
+            </div>
+            <div class="button-row">
+                <button id="btn" onclick="calculator('7')">7</button>
+                <button id="btn" onclick="calculator('8')">8</button>
+                <button id="btn" onclick="calculator('9')">9</button>
+                <button id="colored" onclick="calculator('*')">×</button>
+            </div>
+            <div class="button-row">
+                <button id="btn" onclick="calculator('4')">4</button>
+                <button id="btn" onclick="calculator('5')">5</button>
+                <button id="btn" onclick="calculator('6')">6</button>
+                <button id="colored" onclick="calculator('-')">-</button>
+            </div>
+            <div class="button-row">
+                <button id="btn" onclick="calculator('1')">1</button>
+                <button id="btn" onclick="calculator('2')">2</button>
+                <button id="btn" onclick="calculator('3')">3</button>
+                <button id="colored" onclick="calculator('+')">+</button>
+            </div>
+            <div class="button-row">
+                <button id="colored" onclick="calculator('+/-')">+/-</button>
+                <button id="btn" onclick="calculator('0')">0</button>
+                <button id="colored" onclick="calculator('.')">.</button>
+                <button id="colored" onclick="calculator('=')">=</button>
+            </div>
+        </div>
     </div>
     <script src="app.js"></script>
-  </body>
+</body>
 </html>
