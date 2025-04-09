@@ -1,66 +1,88 @@
-/* Base styles for all devices */
+/* Base styles - maintains your original laptop layout */
 #container {
     text-align: center;
-    margin: 20px auto;
+    margin: 0 auto;
+    width: 300px;
     border: solid 1px black;
+    height: 500px;
     border-radius: 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 10px;
-    width: 100%;
-    max-width: 300px;
+    position: relative;
+    background: white;
 }
 
-/* Display area adjustments */
-#display-area, #result-area {
-    min-height: 50px;
-    padding: 5px;
+#display-area {
+    height: 50px;
+    padding: 10px 20px 0 20px;
+}
+
+#display-area-h2 {
+    color: gray;
+    font-family: "Times New Roman", Times, serif;
+    text-align: right;
+    font-size: 1.2rem;
+    margin: 0;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-/* Button base styles */
-#btn, #colored {
+#result-area {
+    height: 50px;
+    padding: 0 20px;
+}
+
+#result-area-h1 {
+    text-align: right;
+    font-size: 1.8rem;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#buttons-and-operaters-div {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+/* Original button styles - maintains your exact colors */
+#btn {
     height: 50px;
     width: 50px;
     border: solid 1px;
     border-radius: 25px;
-    margin: 5px;
+    margin-right: 7px;
+    background-color: #545AA7;
+    color: white;
     font-size: 20px;
-    display: inline-block;
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
-/* Mobile-specific styles */
-@media only screen and (max-width: 600px) {
-    body {
-        padding: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-    }
-    
-    #container {
-        width: 95%;
-        margin: 0 auto;
-    }
-    
-    #buttons-and-operaters-div {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 8px;
-        padding: 10px;
-    }
-    
-    #btn, #colored {
-        height: 60px;
-        width: 100%;
-        max-width: 60px;
-        margin: 0;
-        font-size: 18px;
-    }
+#colored {
+    height: 50px;
+    width: 50px;
+    border: solid 1px;
+    border-radius: 25px;
+    margin-right: 7px;
+    background-color: greenyellow;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
-/* Keep your existing hover effects */
+/* Hover effects */
 #btn:hover {
     background-color: orange;
     transform: scale(1.02);
@@ -69,4 +91,34 @@
 #colored:hover {
     background-color: blue;
     transform: scale(1.02);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 400px) {
+    #container {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        min-height: 500px;
+    }
+    
+    .button-row {
+        margin-bottom: 5px;
+    }
+    
+    #btn, #colored {
+        height: 55px;
+        width: 55px;
+        margin-right: 5px;
+    }
+    
+    #buttons-and-operaters-div {
+        padding: 15px;
+    }
+}
+
+/* Prevent text selection and tap highlight */
+button {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
